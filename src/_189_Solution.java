@@ -7,15 +7,16 @@ import java.util.Arrays;
 public class _189_Solution {
 
     // 解法一，嵌套循环
-    // 执行耗时:104 ms,击败了27.61% 的Java用户
-    // 内存消耗:37.3 MB,击败了95.41% 的Java用户
+    // 执行耗时:107 ms,击败了20.67% 的Java用户
+    // 内存消耗:37.8 MB,击败了93.81% 的Java用户
     public static void rotate1(int[] nums, int k) {
+        k = k % nums.length;
         for (int i = 0; i < k; i++) {
-            int previous = nums[nums.length - 1];
+            int previous_value = nums[nums.length - 1];
             for (int j = 0; j < nums.length; j++) {
                 int temp = nums[j];
-                nums[j] = previous;
-                previous = temp;
+                nums[j] = previous_value;
+                previous_value = temp;
             }
         }
     }
@@ -24,19 +25,18 @@ public class _189_Solution {
     // 执行耗时:1 ms,击败了81.21% 的Java用户
     // 内存消耗:37.4 MB,击败了95.41% 的Java用户
     public static void rotate2(int[] nums, int k) {
-        int[] temps = new int[nums.length];
+        int temp_nums[] = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            int index = (k + i) % nums.length;
-            temps[index] = nums[i];
+            temp_nums[(k + i) % nums.length] = nums[i];
         }
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = temps[i];
+        for (int j = 0; j < nums.length; j++) {
+            nums[j] = temp_nums[j];
         }
     }
 
     // 解法四
-    // 执行耗时:1 ms,击败了81.21% 的Java用户
-    // 内存消耗:38.2 MB,击败了74.66% 的Java用户
+    // 执行耗时:0 ms,击败了100.00% 的Java用户
+    // 内存消耗:37.9 MB,击败了86.62% 的Java用户
     public static void rotate3(int[] nums, int k) {
         int count = 0;
         for (int i = 0; count < nums.length; i++) {
@@ -44,18 +44,18 @@ public class _189_Solution {
             int previous_value = nums[i];
             do {
                 int next_index = (k + previous_index) % nums.length;
-                int temp = nums[next_index];
+                int next_value = nums[next_index];
                 nums[next_index] = previous_value;
-                previous_value = temp;
                 previous_index = next_index;
+                previous_value = next_value;
                 count++;
-            } while (i != previous_index);
+            } while (previous_index != i);
         }
     }
 
     // 解法四
-    // 执行耗时:0 ms,击败了100.00% 的Java用户
-    // 内存消耗:38.4 MB,击败了57.65% 的Java用户
+    // 执行耗时:1 ms,击败了81.21% 的Java用户
+    // 内存消耗:37.7 MB,击败了94.42% 的Java用户
     public static void rotate4(int[] nums, int k) {
         k = k % nums.length;
         reverse(nums, 0, nums.length - 1);
@@ -65,9 +65,9 @@ public class _189_Solution {
 
     public static void reverse(int nums[], int start, int end) {
         while (start < end) {
-            int temp = nums[start];
-            nums[start] = nums[end];
-            nums[end] = temp;
+            nums[start] = nums[start] + nums[end];
+            nums[end] = nums[start] - nums[end];
+            nums[start] = nums[start] - nums[end];
             start++;
             end--;
         }
