@@ -41,16 +41,16 @@ public class _189_Solution {
         k = k % nums.length;
         int count = 0;
         for (int start = 0; count < nums.length; start++) {
-            int current_index = start;
+            int current = start;
             int previous = nums[start];
             do {
-                int next_index = (k + count) % nums.length;
-                int temp = nums[next_index];
-                nums[next_index] = previous;
+                int next = (count + k) % nums.length;
+                int temp = nums[next];
+                nums[next] = previous;
                 previous = temp;
-                current_index = next_index;
+                current = next;
                 count++;
-            } while (start != current_index);
+            } while (start != current);
         }
     }
 
