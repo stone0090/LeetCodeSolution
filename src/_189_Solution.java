@@ -40,9 +40,9 @@ public class _189_Solution {
     public static void rotate3(int[] nums, int k) {
         k = k % nums.length;
         int count = 0;
-        for (int i = 0; count < nums.length; i++) {
-            int current_index = i;
-            int previous = nums[i];
+        for (int start = 0; count < nums.length; start++) {
+            int current_index = start;
+            int previous = nums[start];
             do {
                 int next_index = (k + count) % nums.length;
                 int temp = nums[next_index];
@@ -50,7 +50,7 @@ public class _189_Solution {
                 previous = temp;
                 current_index = next_index;
                 count++;
-            } while (i != current_index);
+            } while (start != current_index);
         }
     }
 
