@@ -25,10 +25,26 @@ public class _26_Solution {
         return j;
     }
 
-    // 解法二，快慢指针，一次循环
+    // 解法二，单次循环
+    // 执行耗时:1 ms,击败了100.00% 的Java用户
+    // 内存消耗:40 MB,击败了95.07% 的Java用户
+    public static int removeDuplicates2(int[] nums) {
+        if (nums.length == 0) {return 0;}
+        int index = 1;
+        int previous = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (previous != nums[i]) {
+                previous = nums[i];
+                nums[index++] = previous;
+            }
+        }
+        return index;
+    }
+
+    // 解法三，快慢指针，一次循环
     // 执行耗时:1 ms,击败了100.00% 的Java用户
     // 内存消耗:40 MB,击败了95.02% 的Java用户
-    private static int removeDuplicates2(int[] nums) {
+    private static int removeDuplicates3(int[] nums) {
         int j = 0;
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] != nums[i - 1]) {
@@ -40,8 +56,9 @@ public class _26_Solution {
 
     public static void main(String[] args) {
         int[] nums = new int[] {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-        int count = removeDuplicates1(nums);
-        // int count = removeDuplicates2(nums);
+        // int count = removeDuplicates1(nums);
+        int count = removeDuplicates2(nums);
+        // int count = removeDuplicates3(nums);
         for (int i = 0; i < count; i++) {
             System.out.println(nums[i]);
         }
