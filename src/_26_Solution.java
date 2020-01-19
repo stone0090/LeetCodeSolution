@@ -42,16 +42,16 @@ public class _26_Solution {
     }
 
     // 解法三，快慢指针，一次循环
-    // 执行耗时:1 ms,击败了100.00% 的Java用户
+    // 执行耗时:1 ms,击败了100.00% 的   Java用户
     // 内存消耗:40 MB,击败了95.02% 的Java用户
     private static int removeDuplicates3(int[] nums) {
-        int j = 0;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i - 1]) {
-                nums[++j] = nums[i];
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[i] != nums[j]) {
+                nums[++i] = nums[j];
             }
         }
-        return j + 1;
+        return i + 1;
     }
 
     public static void main(String[] args) {

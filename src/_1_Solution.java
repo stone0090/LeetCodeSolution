@@ -12,13 +12,13 @@ public class _1_Solution {
     // 内存消耗:37.2 MB,击败了91.44% 的Java用户
     private static int[] twoSum1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i; j < nums.length; j++) {
-                if ((target - nums[i]) == nums[j]) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if ((nums[i] + nums[j]) == target) {
                     return new int[] {i, j};
                 }
             }
         }
-        return null;
+        throw new IllegalArgumentException("没有结果");
     }
 
     // 解法二，使用额外hashMap
@@ -29,10 +29,11 @@ public class _1_Solution {
         for (int i = 0; i < nums.length; i++) {
             if (hm.containsKey(target - nums[i])) {
                 return new int[] {hm.get(target - nums[i]), i};
+            } else {
+                hm.put(nums[i], i);
             }
-            hm.put(nums[i], i);
         }
-        return null;
+        throw new IllegalArgumentException("没有结果");
     }
 
     public static void main(String[] args) {
