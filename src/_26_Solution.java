@@ -7,7 +7,7 @@ import java.util.Iterator;
  */
 public class _26_Solution {
 
-    // 解法一，两次循环
+    // 解法一，两次循环（使用了额外的空间，不满足题意）
     // 执行耗时:101 ms,击败了5.06% 的Java用户
     // 内存消耗:40.4 MB,击败了94.58% 的Java用户
     private static int removeDuplicates1(int[] nums) {
@@ -25,7 +25,7 @@ public class _26_Solution {
         return j;
     }
 
-    // 解法二，单次循环
+    // 解法二，单次循环（使用了额外的空间，不满足题意）
     // 执行耗时:1 ms,击败了100.00% 的Java用户
     // 内存消耗:40 MB,击败了95.07% 的Java用户
     public static int removeDuplicates2(int[] nums) {

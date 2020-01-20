@@ -34,7 +34,7 @@ public class _189_Solution {
         }
     }
 
-    // 解法四
+    // 解法三，单次循环
     // 执行耗时:0 ms,击败了100.00% 的Java用户
     // 内存消耗:37.9 MB,击败了86.62% 的Java用户
     public static void rotate3(int[] nums, int k) {
@@ -53,7 +53,7 @@ public class _189_Solution {
         }
     }
 
-    // 解法四
+    // 解法四，数组倒置
     // 执行耗时:1 ms,击败了81.21% 的Java用户
     // 内存消耗:37.7 MB,击败了94.42% 的Java用户
     public static void rotate4(int[] nums, int k) {
