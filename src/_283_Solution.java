@@ -32,7 +32,7 @@ public class _283_Solution {
         }
     }
 
-    // 解法二：快慢指针
+    // 解法三：快慢指针（更优解）
     // 执行耗时:0 ms,击败了100.00% 的Java用户
     // 内存消耗:37.3 MB,击败了90.96% 的Java用户
     public void moveZeroes3(int[] nums) {
