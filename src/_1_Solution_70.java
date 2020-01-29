@@ -5,7 +5,7 @@ import java.util.HashMap;
  * @author stone
  * @date 2020/01/08
  */
-public class _1_Solution {
+public class _1_Solution_70 {
 
     // 解法一，嵌套循环
     // 执行耗时:15 ms,击败了57.03% 的Java用户

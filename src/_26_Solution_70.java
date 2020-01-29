@@ -5,7 +5,7 @@ import java.util.Iterator;
  * @author stone
  * @date 2020/01/08
  */
-public class _26_Solution {
+public class _26_Solution_70 {
 
     // 解法一，两次循环（使用了额外的空间，不满足题意）
     // 执行耗时:101 ms,击败了5.06% 的Java用户

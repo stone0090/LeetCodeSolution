@@ -4,7 +4,7 @@ import java.util.Arrays;
  * @author stone
  * @date 2020/01/08
  */
-public class _189_Solution {
+public class _189_Solution_40 {
 
     // 解法一，嵌套循环
     // 执行耗时:107 ms,击败了20.67% 的Java用户
@@ -21,7 +21,7 @@ public class _189_Solution {
         }
     }
 
-    // 解法二，使用额外数组，两次循环
+    // 解法二，使用额外数组，两次循环（使用了额外的空间，不满足题意）
     // 执行耗时:1 ms,击败了81.21% 的Java用户
     // 内存消耗:37.4 MB,击败了95.41% 的Java用户
     public static void rotate2(int[] nums, int k) {

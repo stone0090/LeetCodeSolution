@@ -2,7 +2,7 @@
  * @author stone
  * @date 2020/01/08
  */
-public class _11_Solution {
+public class _11_Solution_20 {
 
     // 解法一：暴力双循环
     // 执行耗时:333 ms,击败了10.85% 的Java用户

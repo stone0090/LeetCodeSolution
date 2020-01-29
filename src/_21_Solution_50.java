@@ -2,7 +2,7 @@
  * @author stone
  * @date 2020/01/08
  */
-public class _21_Solution {
+public class _21_Solution_50 {
 
     public class ListNode {
         public int val;
