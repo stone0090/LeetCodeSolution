@@ -21,7 +21,7 @@ public class _1_Solution_70 {
         throw new IllegalArgumentException("没有结果");
     }
 
-    // 解法二，使用额外hashMap
+    // 解法二，空间换时间，使用额外hashMap
     // 执行耗时:3 ms,击败了97.55% 的Java用户
     // 内存消耗:37.1 MB,击败了92.20% 的Java用户
     private static int[] twoSum2(int[] nums, int target) {

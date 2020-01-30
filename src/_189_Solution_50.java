@@ -4,7 +4,7 @@ import java.util.Arrays;
  * @author stone
  * @date 2020/01/08
  */
-public class _189_Solution_40 {
+public class _189_Solution_50 {
 
     // 解法一，嵌套循环
     // 执行耗时:107 ms,击败了20.67% 的Java用户
@@ -38,18 +38,17 @@ public class _189_Solution_40 {
     // 执行耗时:0 ms,击败了100.00% 的Java用户
     // 内存消耗:37.9 MB,击败了86.62% 的Java用户
     public static void rotate3(int[] nums, int k) {
-        int count = 0;
-        for (int i = 0; count < nums.length; i++) {
+        for (int i = 0, j = 0; j < nums.length; i++) {
             int previous_index = i;
             int previous_value = nums[i];
             do {
-                int next_index = (k + previous_index) % nums.length;
+                int next_index = (previous_index + k) % nums.length;
                 int next_value = nums[next_index];
                 nums[next_index] = previous_value;
                 previous_index = next_index;
                 previous_value = next_value;
-                count++;
-            } while (previous_index != i);
+                j++;
+            } while (i != previous_index);
         }
     }
 

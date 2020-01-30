@@ -5,7 +5,7 @@ import java.util.Iterator;
  * @author stone
  * @date 2020/01/08
  */
-public class _26_Solution_70 {
+public class _26_Solution_80 {
 
     // 解法一，两次循环（使用了额外的空间，不满足题意）
     // 执行耗时:101 ms,击败了5.06% 的Java用户
@@ -42,7 +42,7 @@ public class _26_Solution_70 {
     }
 
     // 解法三，快慢指针，一次循环
-    // 执行耗时:1 ms,击败了100.00% 的   Java用户
+    // 执行耗时:1 ms,击败了100.00% 的Java用户
     // 内存消耗:40 MB,击败了95.02% 的Java用户
     private static int removeDuplicates3(int[] nums) {
         int i = 0;

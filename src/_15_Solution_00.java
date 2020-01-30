@@ -57,7 +57,7 @@ public class _15_Solution_00 {
         return result;
     }
 
-    // 解题三： 双指针
+    // 解题三： 双指针，左右夹逼
     public static List<List<Integer>> threeSum3(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         if (nums == null || nums.length == 0) { return result; }

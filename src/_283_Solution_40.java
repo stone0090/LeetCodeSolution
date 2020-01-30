@@ -2,7 +2,7 @@
  * @author stone
  * @date 2020/01/08
  */
-public class _283_Solution_50 {
+public class _283_Solution_40 {
 
     // 解法一：双循环，冒泡排序
     // 执行耗时:113 ms,击败了5.10% 的Java用户

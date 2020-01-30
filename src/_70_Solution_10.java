@@ -19,13 +19,10 @@ public class _70_Solution_10 {
     public int climb_stairs(int n, HashMap<Integer, Integer> cache) {
         if (n < 1) { return 0; }
         if (n < 3) { return n; }
-        if (cache.containsKey(n)) {
-            return cache.get(n);
-        } else {
-            int result = climb_stairs(n - 1, cache) + climb_stairs(n - 2, cache);
-            cache.put(n, result);
-            return result;
+        if (!cache.containsKey(n)) {
+            cache.put(n, climb_stairs(n - 1, cache) + climb_stairs(n - 2, cache));
         }
+        return cache.get(n);
     }
 
     // 解法儿：循环平推
