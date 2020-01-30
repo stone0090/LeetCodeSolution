@@ -31,7 +31,7 @@ public class _15_Solution_00 {
         return result;
     }
 
-    // 解题一：空间换时间，适用额外的HashMap。要点：1）对比大小，2）判重
+    // 解题二：空间换时间，适用额外的HashMap。要点：1）对比大小，2）判重
     public static List<List<Integer>> threeSum2(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         List<String> unique = new ArrayList<>();
@@ -57,14 +57,35 @@ public class _15_Solution_00 {
         return result;
     }
 
-    // 解题一： 双指针
+    // 解题三： 双指针
     public static List<List<Integer>> threeSum3(int[] nums) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        if (nums == null || nums.length == 0) { return result; }
+        Arrays.sort(nums);
+        for (int k = 0; k < nums.length - 2; k++) {
+            if (nums[k] > 0) { break; }
+            if (k > 0 && nums[k] == nums[k - 1]) { continue; }
+            int i = k + 1, j = nums.length - 1;
+            while (i < j) {
+                int sum = nums[k] + nums[i] + nums[j];
+                if (sum == 0) {
+                    result.add(Arrays.asList(nums[k], nums[i], nums[j]));
+                    while (i < j && nums[i] == nums[++i]) {}
+                    while (i < j && nums[j] == nums[--j]) {}
+                } else if (sum < 0) {
+                    while (i < j && nums[i] == nums[++i]) {}
+                } else if (sum > 0) {
+                    while (i < j && nums[j] == nums[--j]) {}
+                }
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {
-        int[] nums = {-1, 0, 1, 2, -1, -4};
-        List<List<Integer>> result = threeSum2(nums);
+        // int[] nums = {-1, 0, 1, 2, -1, -4};
+        int[] nums = {1, 0, -1};
+        List<List<Integer>> result = threeSum3(nums);
         result.forEach(x -> {
             x.forEach(y -> System.out.println(y.toString()));
             System.out.println("--------------------------");
