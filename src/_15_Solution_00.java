@@ -59,23 +59,22 @@ public class _15_Solution_00 {
 
     // 解题三： 双指针，左右夹逼
     public static List<List<Integer>> threeSum3(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList();
         if (nums == null || nums.length == 0) { return result; }
         Arrays.sort(nums);
         for (int k = 0; k < nums.length - 2; k++) {
-            if (nums[k] > 0) { break; }
-            if (k > 0 && nums[k] == nums[k - 1]) { continue; }
-            int i = k + 1, j = nums.length - 1;
-            while (i < j) {
+            if (nums[k] > 0) break;
+            if (nums[k] == nums[k + 1]) continue;
+            for (int i = k + 1, j = nums.length - 1; i < j;) {
                 int sum = nums[k] + nums[i] + nums[j];
                 if (sum == 0) {
                     result.add(Arrays.asList(nums[k], nums[i], nums[j]));
-                    while (i < j && nums[i] == nums[++i]) {}
-                    while (i < j && nums[j] == nums[--j]) {}
+                    while (i < j && nums[i++] == nums[i]) {}
+                    while (i < j && nums[j--] == nums[j]) {}
                 } else if (sum < 0) {
-                    while (i < j && nums[i] == nums[++i]) {}
+                    while (i < j && nums[i++] == nums[i]) {}
                 } else if (sum > 0) {
-                    while (i < j && nums[j] == nums[--j]) {}
+                    while (i < j && nums[j--] == nums[j]) {}
                 }
             }
         }
